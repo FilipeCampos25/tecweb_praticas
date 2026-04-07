@@ -1,57 +1,42 @@
-let grupos = [];
+// Script básico - sem funcionalidades extras
 
-const form = document.getElementById('cadastro-form');
-const nomeInput = document.getElementById('nome');
-const integrantesInput = document.getElementById('integrantes');
-const liderInput = document.getElementById('lider');
-const errorNome = document.getElementById('error-nome');
-const errorIntegrantes = document.getElementById('error-integrantes');
-const errorLider = document.getElementById('error-lider');
+// Array para armazenar os grupos (dados da sessão atual)
+var grupos = [];
 
-function limparErros() {
-    errorNome.textContent = '';
-    errorIntegrantes.textContent = '';
-    errorLider.textContent = '';
-}
+// Função para renderizar os grupos na listagem
+function renderGrupos() {
+    var container = document.getElementById('grupos-container');
+    if (!container) return; // Só executa se estiver na página de listagem
 
-function validarFormulario() {
-    let valido = true;
-    const nome = nomeInput.value.trim();
-    const integrantes = Number(integrantesInput.value);
-    const lider = liderInput.value.trim();
+    container.innerHTML = ''; // Limpa o conteúdo anterior
 
-    if (!nome) {
-        errorNome.textContent = 'Campo obrigatório';
-        valido = false;
-    }
-
-    if (!integrantesInput.value || integrantes <= 0) {
-        errorIntegrantes.textContent = 'Informe uma quantidade maior que zero';
-        valido = false;
-    }
-
-    if (!lider) {
-        errorLider.textContent = 'Campo obrigatório';
-        valido = false;
-    }
-
-    return valido;
-}
-
-form.addEventListener('submit', function (event) {
-    event.preventDefault();
-    limparErros();
-
-    if (!validarFormulario()) {
+    if (grupos.length === 0) {
+        container.innerHTML = '<p>Nenhum grupo cadastrado</p>';
         return;
     }
 
-    const grupo = {
-        nome: nomeInput.value.trim(),
-        integrantes: Number(integrantesInput.value),
-        lider: liderInput.value.trim()
-    };
+    grupos.forEach(function(grupo) {
+        var card = document.createElement('div');
+        card.className = 'card';
 
-    grupos.push(grupo);
-    form.reset();
+        var nome = document.createElement('h3');
+        nome.textContent = 'Nome: ' + grupo.nome;
+
+        var quantidade = document.createElement('p');
+        quantidade.textContent = 'Quantidade de integrantes: ' + grupo.integrantes.length;
+
+        var lider = document.createElement('p');
+        lider.textContent = 'Líder: ' + grupo.lider;
+
+        card.appendChild(nome);
+        card.appendChild(quantidade);
+        card.appendChild(lider);
+
+        container.appendChild(card);
+    });
+}
+
+// Chama renderGrupos quando a página carrega, se estiver na listagem
+document.addEventListener('DOMContentLoaded', function() {
+    renderGrupos();
 });
