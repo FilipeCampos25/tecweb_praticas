@@ -18,7 +18,24 @@
     </header>
     <main>
         <h2>Cadastro</h2>
-        <p>Conteúdo da página de cadastro.</p>
+        <form id="cadastro-form" novalidate>
+            <div class="form-group">
+                <label for="nome">Nome do grupo</label>
+                <input type="text" id="nome" name="nome">
+                <span class="error" id="error-nome"></span>
+            </div>
+            <div class="form-group">
+                <label for="integrantes">Quantidade de integrantes</label>
+                <input type="number" id="integrantes" name="integrantes" min="1">
+                <span class="error" id="error-integrantes"></span>
+            </div>
+            <div class="form-group">
+                <label for="lider">Nome do líder</label>
+                <input type="text" id="lider" name="lider">
+                <span class="error" id="error-lider"></span>
+            </div>
+            <button type="submit">Salvar</button>
+        </form>
     </main>
     <script src="js/script.js"></script>
 </body>
