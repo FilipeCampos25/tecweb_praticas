@@ -77,9 +77,6 @@ nav a.active {
 }
 
 main {
-    max-width: 960px;
-    margin: 32px auto;
-    padding: 0 20px 32px;
 }
 
 .panel {
@@ -191,6 +188,7 @@ input:focus {
 .cards-grid {
     display: grid;
     gap: 16px;
+    grid-template-columns: 1fr;
 }
 
 .card {
@@ -211,12 +209,12 @@ input:focus {
 }
 
 .empty-state {
-    padding: 20px;
-    text-align: center;
-    color: var(--muted);
-    background-color: var(--surface-soft);
-    border: 1px dashed var(--line);
-    border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  color: var(--muted);
+  background-color: var(--surface-soft);
+  border: 1px dashed var(--line);
+  border-radius: 16px;
 }
 
 @media (max-width: 600px) {
@@ -245,3 +243,4 @@ input:focus {
         width: 100%;
     }
 }
+
