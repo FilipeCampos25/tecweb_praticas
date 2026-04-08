@@ -2,45 +2,45 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-<<<<<<< Updated upstream
     <title>Formação de Grupos - Cadastro</title>
-=======
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forma&ccedil;&atilde;o de Grupos - Cadastro</title>
->>>>>>> Stashed changes
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
-        <h1>Formação de Grupos</h1>
+        <h1>Forma&ccedil;&atilde;o de Grupos</h1>
         <nav>
             <ul>
-                <li><a href="index.html">Página Inicial</a></li>
-                <li><a href="cadastro.html">Cadastro</a></li>
+                <li><a href="index.html">P&aacute;gina Inicial</a></li>
+                <li><a href="cadastro.html" class="active">Cadastro</a></li>
                 <li><a href="listagem.html">Listagem</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <h2>Cadastro</h2>
-        <form id="cadastro-form" novalidate>
-            <div class="form-group">
-                <label for="nome">Nome do grupo</label>
-                <input type="text" id="nome" name="nome">
-                <span class="error" id="error-nome"></span>
-            </div>
-            <div class="form-group">
-                <label for="integrantes">Quantidade de integrantes</label>
-                <input type="number" id="integrantes" name="integrantes" min="1">
-                <span class="error" id="error-integrantes"></span>
-            </div>
-            <div class="form-group">
-                <label for="lider">Nome do líder</label>
-                <input type="text" id="lider" name="lider">
-                <span class="error" id="error-lider"></span>
-            </div>
-            <button type="submit">Salvar</button>
-        </form>
+        <section class="panel">
+            <h2>Cadastro</h2>
+            <p class="page-intro">Preencha os dados do grupo para salvar a informa&ccedil;&atilde;o no navegador.</p>
+            <form id="cadastro-form" novalidate>
+                <div class="form-group">
+                    <label for="nome">Nome do grupo</label>
+                    <input type="text" id="nome" name="nome" placeholder="Ex: Grupo de Estudos">
+                    <span class="error" id="error-nome"></span>
+                </div>
+                <div class="form-group">
+                    <label for="integrantes">Quantidade de integrantes</label>
+                    <input type="number" id="integrantes" name="integrantes" min="1" placeholder="Ex: 5">
+                    <span class="error" id="error-integrantes"></span>
+                </div>
+                <div class="form-group">
+                    <label for="lider">Nome do l&iacute;der</label>
+                    <input type="text" id="lider" name="lider" placeholder="Ex: Maria">
+                    <span class="error" id="error-lider"></span>
+                </div>
+                <button type="submit">Salvar grupo</button>
+                <p id="form-feedback" class="form-feedback" aria-live="polite"></p>
+            </form>
+        </section>
     </main>
     <script src="js/script.js"></script>
 </body>

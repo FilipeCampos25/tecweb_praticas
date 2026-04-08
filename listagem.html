@@ -2,28 +2,27 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-<<<<<<< Updated upstream
     <title>Formação de Grupos - Listagem</title>
-=======
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forma&ccedil;&atilde;o de Grupos - Listagem</title>
->>>>>>> Stashed changes
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
-        <h1>Formação de Grupos</h1>
+        <h1>Forma&ccedil;&atilde;o de Grupos</h1>
         <nav>
             <ul>
-                <li><a href="index.html">Página Inicial</a></li>
+                <li><a href="index.html">P&aacute;gina Inicial</a></li>
                 <li><a href="cadastro.html">Cadastro</a></li>
-                <li><a href="listagem.html">Listagem</a></li>
+                <li><a href="listagem.html" class="active">Listagem</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <h2>Listagem</h2>
-        <p>Conteúdo da página de listagem.</p>
+        <section class="panel">
+            <h2>Listagem</h2>
+            <p class="page-intro">Os grupos salvos ficam armazenados no localStorage deste navegador.</p>
+            <div id="grupos-container" class="cards-grid"></div>
+        </section>
     </main>
     <script src="js/script.js"></script>
 </body>
